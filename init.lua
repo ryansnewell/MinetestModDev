@@ -6,13 +6,13 @@ minetest.register_node("testmod:computer", {
 })
 
 --Just testing
-minetest.register_on_placenode(function(pos, newnode, placer, oldnode, itemstack, pointed_thing) 
-	if newnode.name == "testmod:computer" then
-		minetest.chat_send_all("You placed a computer")
-	else
-		minetest.chat_send_all("Tsk tsk")
-	end
-end)
+--minetest.register_on_placenode(function(pos, newnode, placer, oldnode, itemstack, pointed_thing) 
+--	if newnode.name == "testmod:computer" then
+--		minetest.chat_send_all("You placed a computer")
+--	else
+--		minetest.chat_send_all("Tsk tsk")
+--	end
+--end)
 
 --Register computer recipe
 minetest.register_craft({
@@ -27,7 +27,6 @@ minetest.register_craft({
 --Register formspec for computer node
 minetest.register_on_punchnode(function(pos, node, puncher, pointed_thing)
 	if node.name == "testmod:computer" then
-		--minetest.chat_send_all("You punched me, you cunt")
 		formspec = [[
 			invsize[8,9;]
 			list[context;item;2,2;1,1;]
